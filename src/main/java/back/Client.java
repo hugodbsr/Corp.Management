@@ -1,5 +1,8 @@
 package back;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Client implements Person{
     private static int idCounter;
     private final int ID;
@@ -8,15 +11,16 @@ public abstract class Client implements Person{
     private String email;
     private String phone;
     private String address;
+    private List<Transaction> transactions;
 
     public Client(String name, String surname, String email, String phone, String address) {
-        ID = idCounter;
-        Client.idCounter++;
+        ID = idCounter++;
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.phone = phone;
         this.address = address;
+        this.transactions = new ArrayList<>();
     }
 
     @Override
@@ -72,6 +76,14 @@ public abstract class Client implements Person{
     @Override
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public void addTransaction(Transaction transaction) {
+        transactions.add(transaction);
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
     }
 
     public abstract String getType();

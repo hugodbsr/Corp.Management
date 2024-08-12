@@ -1,6 +1,6 @@
 package back;
 
-public abstract class Employee implements Person{
+public abstract class Employee implements Person {
     private static int idCounter;
     private final int ID;
     private String name;
@@ -12,7 +12,7 @@ public abstract class Employee implements Person{
     private double post;
 
     public Employee(String name, String surname, String email, String phone, String address, double wage, double post) {
-        ID = idCounter;
+        ID = idCounter++;
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -94,4 +94,8 @@ public abstract class Employee implements Person{
     }
 
     public abstract String getType();
+
+    public double calculateTotalSalary() {
+        return wage;
+    }
 }
