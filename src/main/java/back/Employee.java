@@ -1,7 +1,7 @@
 package back;
 
 public abstract class Employee implements Person {
-    private static int idCounter;
+    private static int idCounter = 1;;
     private final int ID;
     private String name;
     private String surname;
@@ -9,9 +9,8 @@ public abstract class Employee implements Person {
     private String phone;
     private String address;
     private double wage;
-    private double post;
 
-    public Employee(String name, String surname, String email, String phone, String address, double wage, double post) {
+    public Employee(String name, String surname, String email, String phone, String address, double wage) {
         ID = idCounter++;
         this.name = name;
         this.surname = surname;
@@ -19,7 +18,6 @@ public abstract class Employee implements Person {
         this.phone = phone;
         this.address = address;
         this.wage = wage;
-        this.post = post;
     }
 
     @Override
@@ -83,14 +81,6 @@ public abstract class Employee implements Person {
 
     public void setWage(double wage) {
         this.wage = wage;
-    }
-
-    public double getPost() {
-        return post;
-    }
-
-    public void setPost(double post) {
-        this.post = post;
     }
 
     public abstract String getType();

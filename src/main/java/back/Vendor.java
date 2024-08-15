@@ -7,8 +7,8 @@ public class Vendor extends Employee {
     private List<Transaction> transactions;
     private double totalCommission;
 
-    public Vendor(String name, String surname, String email, String phone, String address, double wage, double post) {
-        super(name, surname, email, phone, address, wage, post);
+    public Vendor(String name, String surname, String email, String phone, String address, double wage) {
+        super(name, surname, email, phone, address, wage);
         this.transactions = new ArrayList<>();
         this.totalCommission = 0.0;
     }

@@ -1,14 +1,14 @@
 package back;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Transaction {
-    private static int idCounter = 0;
+    private static int idCounter = 1;
     private final int ID;
     private Client client;
     private Product product;
     private int quantity;
-    private Date date;
+    private LocalDate date;
     private double totalPrice;
     private Vendor vendor;
     private double commission;
@@ -18,7 +18,7 @@ public class Transaction {
         this.client = client;
         this.product = product;
         this.quantity = quantity;
-        this.date = new Date();
+        this.date = LocalDate.now();
         this.totalPrice = product.getPrice() * quantity;
         this.vendor = vendor;
         this.commission = calculateCommission();
@@ -47,7 +47,7 @@ public class Transaction {
         return quantity;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
